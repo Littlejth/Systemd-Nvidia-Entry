@@ -5,7 +5,7 @@ fi
 
 modprobe bbswitch ## starting bbswitch
 
-if ! [[ `lsmod | grep nvidia` != "" ]]; then ## Nvidia
+if ! [[ `lsmod | grep nvidia` == "" ]]; then ## Nvidia
 	if ! [[ -e /etc/X11/xorg.conf.d/00-ldm.conf ]]; then
 		cp /opt/Systemd-Nvidia-Entry/00-ldm.conf /etc/X11/xorg.conf.d/00-ldm.conf -f
 	fi
